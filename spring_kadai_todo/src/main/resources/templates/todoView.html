@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+	
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>課題：ToDoリストを作ろう</title>
+</head>
+
+<body>
+	
+	<h2>ToDoリスト</h2>
+	
+	<table border="1">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>タイトル</th>
+				<th>優先度</th>
+				<th>ステータス</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="task : ${tasks}">
+				<td th:text="${task.getTaskId()}"></td>
+				<td th:text="${task.getTaskTitle()}"></td>
+				<td th:text="${task.getTaskPriority()}"></td>
+				<td th:text="${task.getTaskStatus()}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>
